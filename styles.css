@@ -311,7 +311,7 @@ a:hover {
 6. ABOUT SECTION
 ========================================================================== */
 
-.about-section {
+.about-section, .achievements-section {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 6rem 2rem;
@@ -336,6 +336,13 @@ a:hover {
     font-family: var(--font-mono);
     font-size: 1.25rem;
     margin-bottom: 1rem;
+}
+
+.supporting-info{
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    margin-left: 20px;
+    margin-bottom: 12px;
 }
 
 .skills-list {
@@ -411,14 +418,14 @@ a:hover {
     letter-spacing: 1px;
 }
 
-.project-card-content {
+.project-card-content, .achievements-info {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.project-card-title {
+.project-card-title, .achievement-card-title {
     font-size: 1.2rem;
     margin-bottom: 0.75rem;
     color: #ffffff;
@@ -465,13 +472,49 @@ a:hover {
     color: var(--near-black);
 }
 
+/*=============================================================================
+    ACHIEVEMENTS
+============================================================================*/
+.achievements-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.achievements-card{
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color:var(--bg-card);
+    width: 35vw;
+}
+
+.achievements-card img{
+    object-fit: cover;
+    width: 32.5vw;
+    border-radius: var(--border-radius);
+}
+
+#news-title{
+    text-align: center;
+    font-style: italic;
+    font-size: 1em;
+}
+
+.btn-achievement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ==========================================================================
 8. CONTACT SECTION
 ========================================================================== */
 
 .contact-section {
-    max-width: var(--max-width);
-    margin: 0 auto;
+    background-color: rgba(0, 38, 66, 0.3);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding: 6rem 2rem;
 }
 
