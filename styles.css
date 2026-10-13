@@ -472,6 +472,42 @@ a:hover {
     color: var(--near-black);
 }
 
+.calculus-projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 45px;
+}
+
+.calculus-project-card h4{
+    font-size: 1.2em;
+}
+
+.score-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.score-container, .score{
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--gold);
+}
+
+.calculus-project-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
 /*=============================================================================
     ACHIEVEMENTS
 ============================================================================*/
@@ -487,6 +523,13 @@ a:hover {
     border-radius: var(--border-radius);
     background-color:var(--bg-card);
     width: 35vw;
+    transition: var(--transition);
+}
+
+.achievements-card:hover{
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .achievements-card img{

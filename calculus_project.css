@@ -1,0 +1,188 @@
+/*
+    CARANTO, CRISIANE JOSEF A.
+    2CALC-IT - CALCULUS E-PORTFOLIO
+    CALCULUS PROJECT PAGE STYLES
+    Load AFTER styles.css (uses its :root variables).
+*/
+
+/* ==========================================================================
+   1. PAGE LAYOUT (keeps fixed header on top and footer at the bottom)
+   ========================================================================== */
+
+.calc-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.calc-main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Clears the fixed header on desktop */
+    padding: calc(var(--nav-height) + 2.5rem) 2rem 4rem;
+    background-color: rgba(0, 38, 66, 0.3);
+}
+
+.calc-back-link {
+    width: 60vw;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   2. PROJECT CONTAINER (60vw on desktop)
+   ========================================================================== */
+
+.calc-container {
+    width: 60vw;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-secondary);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.calc-img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    background-color: var(--near-black);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   3. TITLE & SCORE
+   ========================================================================== */
+
+.calc-project-title {
+    font-size: 1.9rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.calc-project-score {
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--accent-primary);
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.calc-score-value {
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   4. DESCRIPTION / OBJECTIVES / REFLECTION
+   ========================================================================== */
+
+.calc-section {
+    margin-bottom: 1.75rem;
+}
+
+.calc-section:last-child {
+    margin-bottom: 0;
+}
+
+.calc-section-heading {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--accent-secondary);
+}
+
+.calc-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 75ch;
+}
+
+.calc-meta {
+    font-size: 0.9rem !important;
+    opacity: 0.85;
+}
+
+.calc-meta-label {
+    font-family: var(--font-mono);
+    color: var(--accent-primary);
+}
+
+/* Objectives list (inside nav) */
+.calc-objective-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.calc-objective-list li {
+    font-size: 1rem;
+    background-color: rgba(2, 4, 15, 0.5);
+    padding: 0.6rem 0.9rem;
+    border-radius: 4px;
+    border-left: 2px solid var(--accent-primary);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE
+   ========================================================================== */
+
+/* Tablet (under 1024px): widen container for comfortable reading */
+@media (max-width: 1024px) {
+    .calc-container,
+    .calc-back-link {
+        width: 80vw;
+    }
+}
+
+/* Mobile & small tablets (under 768px): header becomes sticky in styles.css,
+   so the fixed-header offset is no longer needed */
+@media (max-width: 768px) {
+    .calc-main {
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .calc-container,
+    .calc-back-link {
+        width: 100%;
+    }
+
+    .calc-container {
+        padding: 1.25rem;
+    }
+
+    .calc-project-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Extra small devices (under 480px) */
+@media (max-width: 480px) {
+    .calc-container {
+        padding: 1rem;
+    }
+
+    .calc-project-title {
+        font-size: 1.3rem;
+    }
+
+    .calc-project-score {
+        font-size: 1rem;
+    }
+
+    .calc-objective-list li {
+        font-size: 0.95rem;
+    }
+}
