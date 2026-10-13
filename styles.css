@@ -496,16 +496,23 @@ a:hover {
     font-size: 1em;
     font-weight: 500;
     color: var(--gold);
+    text-align: center;
 }
 
 .calculus-project-card{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    /* title (flexible) | score (fixed) | button (fixed) -> same columns on every card */
+    grid-template-columns: 1fr 140px 150px;
     align-items: center;
+    column-gap: 20px;
     width: 60vw;
     padding: 10px 20px;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
+}
+
+.calculus-project-card .btn-project{
+    justify-self: end;
 }
 
 /*=============================================================================
@@ -714,6 +721,17 @@ a:hover {
 
 /* Mobile & Small Tablets (Under 768px) */
 @media (max-width: 768px) {
+    .calculus-project-card {
+        grid-template-columns: 1fr;
+        width: 90vw;
+        row-gap: 0.5rem;
+        text-align: center;
+    }
+
+    .calculus-project-card .btn-project {
+        justify-self: center;
+    }
+
     .navbar {
         flex-direction: column;
         justify-content: space-between;
