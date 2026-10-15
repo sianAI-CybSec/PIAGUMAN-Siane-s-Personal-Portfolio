@@ -46,15 +46,31 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+.mult-img{
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
 .calc-img {
     display: block;
     width: 100%;
-    max-height: 480px;
+    max-height: 100%;
     object-fit: contain;
     background-color: var(--near-black);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     margin-bottom: 1.5rem;
+}
+
+.mult-img img{
+    width: 40vw;
+}
+
+.yt-calc{
+    width: 100%;
+    height: 70vh;
 }
 
 /* ==========================================================================
@@ -106,7 +122,6 @@
 .calc-section p {
     font-size: 1rem;
     line-height: 1.7;
-    max-width: 75ch;
 }
 
 .calc-meta {
