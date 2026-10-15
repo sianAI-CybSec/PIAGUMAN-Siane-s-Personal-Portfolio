@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siane's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Siane's Portfolio | Calculus ePortfolio</title>
+    <meta name="description" content="Crisiane Josef A. Caranto's personal portfolio, featuring her Calculus artifacts, reflections, projects, and achievements.">
+    <link rel="stylesheet" href="calculus_eportfolio.css">
 
     <!--
         CARANTO, CRISIANE JOSEF A.
-        CYB 202
-        INTROWEB - FREECODECAMP FINAL CERT PROJECT
+        2CALC-IT - CALCULUS E-PORTFOLIO
+        Single-page consolidation: all calculus projects open as popup cards.
     -->
 
     <link rel="icon" type="image/png" href="https://i0.wp.com/theangelite.net/wp-content/uploads/2026/07/9-2.png?ssl=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dongle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500..700;1,500..700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <!-- =========================
-     NAVIGATION
-     ========================= -->
-    <header class="header">
-        <nav id="navbar" class="navbar">
-            <div class="nav-brand">
-                <a href="#welcome-section">&lt;Piaguman: Siane's Portfolio/&gt;</a>
-            </div>
-            <ul class="nav-links">
+         NAVIGATION
+         ========================= -->
+    <header class="site-header">
+        <nav id="navbar" class="navbar" aria-label="Main navigation">
+            <a class="nav-brand" href="#welcome-section">&lt;Piaguman: Siane's Portfolio/&gt;</a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+                <span class="nav-toggle-bars" aria-hidden="true"></span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#welcome-section">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#calculus">Calculus</a></li>
+                <li><a href="#reflections">Reflections</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -37,76 +43,85 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <!-- =========================
-            HERO / WELCOME SECTION
-            ========================= -->
-        <section id="welcome-section" class="hero-section">
-            <div class="hero-content">
-                <div class="hero-badge">MAKASADYA NA PARA KING BAYUNG OPORTUNIDAD</div>
-                <h1 class="hero-title">
-                    Hi, I'm <span class="highlight-gold">Siane</span>
-                </h1>
-                <p class="hero-subtitle"><em>Cybersecurity Student &amp; Campus Journalist</em></p>
-                <p class="hero-description">
-                    I am a passionate learner for everything about computing and cybersecurity, even the world. With both cybersecurity and journalism, I wield these tools to serve the people.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View My Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
+             HERO / WELCOME SECTION
+             ========================= -->
+        <section id="welcome-section" class="hero" aria-labelledby="hero-title">
+            <div class="hero-decor" aria-hidden="true">
+                <svg class="hero-curve" viewBox="0 0 800 300" preserveAspectRatio="none" focusable="false">
+                    <path class="curve" d="M0 200 C 100 40, 200 40, 300 150 S 500 270, 600 130 S 750 40, 800 90"/>
+                    <line class="tangent" x1="215" y1="60" x2="395" y2="240"/>
+                    <circle class="point" cx="300" cy="150" r="7"/>
+                </svg>
+                <span class="sym s1">&int;</span>
+                <span class="sym s2">dy/dx</span>
+                <span class="sym s3">&sum;</span>
+                <span class="sym s4">lim</span>
+                <span class="sym s5">f(x)</span>
             </div>
-            <div class="hero-img">
-                <img src="https://avatars.githubusercontent.com/u/283069488?s=400&u=10af37c33da226b0e1fc071f6a66d32d69e5a8b6&v=4" alt="Crisiane Josef Caranto Image">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <p class="hero-badge">MAKASADYA NA PARA KING BAYUNG OPORTUNIDAD</p>
+                    <h1 id="hero-title" class="hero-title">Hi, I'm <span class="highlight-gold">Siane</span></h1>
+                    <p class="hero-subtitle"><em>Cybersecurity Student &amp; Campus Journalist</em></p>
+                    <p class="hero-description">I am a passionate learner for everything about computing and cybersecurity, even the world. With both cybersecurity and journalism, I wield these tools to serve the people.</p>
+                    <div class="hero-cta">
+                        <a href="#calculus" class="btn btn-primary">Explore Calculus Artifacts</a>
+                        <a href="#projects" class="btn btn-secondary">View My Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <img src="https://avatars.githubusercontent.com/u/283069488?s=400&amp;u=10af37c33da226b0e1fc071f6a66d32d69e5a8b6&amp;v=4" alt="Crisiane Josef Caranto Image" referrerpolicy="no-referrer">
+                </div>
             </div>
         </section>
 
         <!-- =========================
-            ABOUT SECTION
-            ========================= -->
-        <section id="about" class="about-section">
+             ABOUT SECTION
+             ========================= -->
+        <section id="about" class="section" aria-labelledby="about-title">
             <div class="section-header">
-                <h2>Some Things About Me</h2>
-                <div class="section-divider"></div>
+                <h2 id="about-title">Some Things About Me</h2>
+                <div class="section-divider" aria-hidden="true"></div>
             </div>
 
             <div class="about-grid">
-                <!-- Biography Card -->
-                <article class="about-card">
+                <article class="about-card about-card-wide">
                     <h3>&lt;ABOUT ME/&gt;</h3>
-                    <p>Hi! I am Crisiane, a BS Cybersecurity student at Holy Angel University. I am currently a beginner with programming and computing technology, and I aim to grow my skills regarding my interests on cybersecurity, ethical hacking, artificial intelligence, and game development.
-                    <br><br>Still, I am willing to extend my horizons and expand my skills as I learn more. Aside from this, I am also a passionate student journalist with an extensive background in news, feature, and opinion writing.
-                    <br><br>With these skills, I aim to become a cybersecurity analyst and a digital safety communicator.</p>
+                    <p>Hi! I am Crisiane, a BS Cybersecurity student at Holy Angel University. I am currently a beginner with programming and computing technology, and I aim to grow my skills regarding my interests on cybersecurity, ethical hacking, artificial intelligence, and game development.</p>
+                    <p>Still, I am willing to extend my horizons and expand my skills as I learn more. Aside from this, I am also a passionate student journalist with an extensive background in news, feature, and opinion writing.</p>
+                    <p>With these skills, I aim to become a cybersecurity analyst and a digital safety communicator.</p>
                 </article>
 
-                <!-- Education Card -->
                 <article class="about-card">
                     <h3>&lt;EDUCATION/&gt;</h3>
-                    <p>Holy Family Academy - Graduated Secondary Level (2025)</p>
-                    <div class="supporting-info">
-                        <p>+ Fr. Andreas Medal of Excellence - Top 1 in STEM</p>
-                        <p>+ 2nd Citation for Best Research Paper</p>
-                    </div>
-                    <p>Holy Angel University - Currently a BS Cybersecurity Student</p>
-                    <div class="supporting-info">
-                        <p>+ President's Lister - 1st &amp; 2nd Semester (1st Year)</p>
-                        <p>+ The Angelite Staff Member (2025-2026)</p>
-                        <p>+ The Angelite Sports Editor (2026-current)</p>
-                    </div>
+                    <p class="edu-school">Holy Family Academy - Graduated Secondary Level (2025)</p>
+                    <ul class="plus-list">
+                        <li>Fr. Andreas Medal of Excellence - Top 1 in STEM</li>
+                        <li>2nd Citation for Best Research Paper</li>
+                    </ul>
+                    <p class="edu-school">Holy Angel University - Currently a BS Cybersecurity Student</p>
+                    <ul class="plus-list">
+                        <li>President's Lister - 1st &amp; 2nd Semester (1st Year)</li>
+                        <li>The Angelite Staff Member (2025-2026)</li>
+                        <li>The Angelite Sports Editor (2026-current)</li>
+                    </ul>
                 </article>
 
-                <!-- Interests Card -->
                 <article class="about-card">
                     <h3>&lt;INTERESTS/&gt;</h3>
-                    <p>++ KAPAMPANGAN LITERATURE</p>
-                    <p>++ PHILIPPINE AND WORLD HISTORY</p>
-                    <p>++ ETHICAL HACKING</p>
-                    <p>++ DIGITAL LITERACY</p>
-                    <p>++ SPORTS WRITING</p>
-                    <p>++ SKETCHING, PEN ART, DIGITAL ART</p>
+                    <ul class="plus-list plus-list-double">
+                        <li>KAPAMPANGAN LITERATURE</li>
+                        <li>PHILIPPINE AND WORLD HISTORY</li>
+                        <li>ETHICAL HACKING</li>
+                        <li>DIGITAL LITERACY</li>
+                        <li>SPORTS WRITING</li>
+                        <li>SKETCHING, PEN ART, DIGITAL ART</li>
+                    </ul>
                 </article>
 
-                <!-- Skills Card -->
                 <article class="about-card">
                     <h3>&lt;SKILLS/&gt;</h3>
                     <p>The skills I would like to share</p>
@@ -123,369 +138,447 @@
         </section>
 
         <!-- =========================
-            PROJECTS SECTION
-            ========================= -->
-        <section id="projects" class="projects-section">
-            <div id="calculus" class="section-header">
-                <h2>Calculus Artifacts</h2>
+             CALCULUS ARTIFACTS (project gallery with popup cards)
+             ========================= -->
+        <section id="calculus" class="section section-alt" aria-labelledby="calculus-title">
+            <div class="section-header">
+                <h2 id="calculus-title">Calculus Artifacts</h2>
                 <p class="section-subtitle">My artifacts in learning Calculus</p>
-                <div class="section-divider"></div>
+                <div class="section-divider" aria-hidden="true"></div>
             </div>
 
-           <!-- =========================
-            PRELIMS SECTION
-            ========================= -->
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Prelims: Operations on Functions</h4>
-                    <h6 class="score-container">Score: <span class="score">20/20</span></h6>
-                    <a href="prlm-ops-on-func.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
+            <div class="gallery-tools">
+                <div class="filter-group" role="group" aria-label="Filter calculus artifacts by period">
+                    <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="chip" data-filter="Prelims" aria-pressed="false">Prelims</button>
+                    <button type="button" class="chip" data-filter="Midterms" aria-pressed="false">Midterms</button>
+                    <button type="button" class="chip" data-filter="Finals" aria-pressed="false">Finals</button>
                 </div>
-            </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Prelims: Introduction to Derivatives</h4>
-                    <h6 class="score-container">Score: <span class="score">20/20</span></h6>
-                    <a href="prlm-intro-diff.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
-            </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Prelims: Derivatives Practice</h4>
-                    <h6 class="score-container">Score: <span class="score">10/10</span></h6>
-                    <a href="prlm-diffprac.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
-            </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Prelims: Quiz 1</h4>
-                    <h6 class="score-container">Score: <span class="score">45/45</span></h6>
-                    <a href="prlm-quiz1.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
-            </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Prelims Requirement: Infographics on Limits</h4>
-                    <h6 class="score-container">Score: <span class="score">50/50</span></h6>
-                    <a href="prlm-req.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
-            </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Prelims: Exam</h4>
-                    <h6 class="score-container">Score: <span class="score">49/50</span></h6>
-                    <a href="prlm-exam.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
+                <p class="gallery-count" id="gallery-count" role="status" aria-live="polite">Showing all 13 artifacts. Select a card to open the full project.</p>
             </div>
 
-            <!-- =========================
-            MIDTERMS SECTION
-            ========================= -->
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Midterms: Basic Differentiation Formulas</h4>
-                    <h6 class="score-container">Score: <span class="score">20/20</span></h6>
-                    <a href="mid-basic-diff-formula.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
+            <div class="card-grid" id="card-grid">
+          <article class="card" data-period="Prelims">
+            <div class="card-media"><img src="project_images/prlm-ops_on_functions.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Prelims</p>
+              <h3 class="card-title">Prelims: Operations on Functions</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>20/20</span>
+                <time datetime="2026-06-25">June 25, 2026</time></p>
+              <p class="card-preview">A re-assessment on functions as the fundamentals of Calculus since the concepts were already covered in our previous Discrete Maths subject. It helped re-angle my mind towards a mind-space where I would Calculus with basic understanding and structure - since I think that the lessons in Calculus I learned relates back to functions.</p>
+              <button type="button" class="btn btn-card card-open" data-project="prlm-ops-on-func" aria-haspopup="dialog" aria-label="View Project: Prelims: Operations on Functions">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Midterms: The Chain Rule</h4>
-                    <h6 class="score-container">Score: <span class="score">18/20</span></h6>
-                    <a href="mid-chain-rule.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
+          </article>
+          <article class="card" data-period="Prelims">
+            <div class="card-media"><img src="project_images/prlm-intro-diff.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Prelims</p>
+              <h3 class="card-title">Prelims: Introduction to Derivatives</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>20/20</span>
+                <time datetime="2026-07-02">July 2, 2026</time></p>
+              <p class="card-preview">This activity introduced me into the basics of one of the fundamental fields of Calculus: Differential Calculus. For this introduction, it assessed my application of the fundamental rules on differentiation such as the Power Rule.</p>
+              <button type="button" class="btn btn-card card-open" data-project="prlm-intro-diff" aria-haspopup="dialog" aria-label="View Project: Prelims: Introduction to Derivatives">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Midterms: Implicit, Trigo, & Exp Differentiation Activity</h4>
-                    <h6 class="score-container">Score: <span class="score">22/22</span></h6>
-                    <a href="mid-imptri.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
+          </article>
+          <article class="card" data-period="Prelims">
+            <div class="card-media"><img src="project_images/prlm-diffprac.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Prelims</p>
+              <h3 class="card-title">Prelims: Derivatives Practice</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>10/10</span>
+                <time datetime="2026-07-20">July 20, 2026</time></p>
+              <p class="card-preview">A practice activity for helping me to reinforce my learning and understanding of derivatives, especially on fractional functions, polynomials, and root exponents.</p>
+              <button type="button" class="btn btn-card card-open" data-project="prlm-diffprac" aria-haspopup="dialog" aria-label="View Project: Prelims: Derivatives Practice">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Midterms Requirement: Video Tutorial</h4>
-                    <h6 class="score-container">Score: <span class="score">47/55</span></h6>
-                    <a href="mid-req.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
+          </article>
+          <article class="card" data-period="Prelims">
+            <div class="card-media"><img src="project_images/prlm-quiz1.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Prelims</p>
+              <h3 class="card-title">Prelims: Quiz 1</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>45/45</span>
+                <time datetime="2026-07-06">July 6, 2026</time></p>
+              <p class="card-preview">My first Prelim Quiz where I showed my competency in understanding and solving functions and limits.</p>
+              <button type="button" class="btn btn-card card-open" data-project="prlm-quiz1" aria-haspopup="dialog" aria-label="View Project: Prelims: Quiz 1">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-            <!-- =========================
-            FINALS SECTION
-            ========================= -->
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Finals: Integrals Drill</h4>
-                    <h6 class="score-container">Score: <span class="score">20/20</span></h6>
-                    <a href="finals-integ-drill.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
+          </article>
+          <article class="card" data-period="Prelims">
+            <div class="card-media"><img src="project_images/prlm-req.png" alt="" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Prelims</p>
+              <h3 class="card-title">Prelims Requirement: Infographics on Limits</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>50/50</span>
+                <time datetime="2026-07-13">July 13, 2026</time></p>
+              <p class="card-preview">This infographic entitled 'THE_FUNCTIONS_OF_COMPUTING.html' presents how functions and limits are applied to different disciplines in the field of computing. From designing computer systems and Artificial Intelligence, to Data Science and Analytics and Internet, Web, and Security, functions and limits are applied to innovate and further improve upon our current technologies not only to make them more efficient, but also better for user experience.</p>
+              <button type="button" class="btn btn-card card-open" data-project="prlm-req" aria-haspopup="dialog" aria-label="View Project: Prelims Requirement: Infographics on Limits">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Finals: Integrals Activity 2</h4>
-                    <h6 class="score-container">Score: <span class="score">14/14</span></h6>
-                    <a href="finals-act2.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
+          </article>
+          <article class="card" data-period="Prelims">
+            <div class="card-media"><img src="project_images/prlm-exam.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Prelims</p>
+              <h3 class="card-title">Prelims: Exam</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>49/50</span>
+                <time datetime="2026-07-14">July 14, 2026</time></p>
+              <p class="card-preview">A culmination of everything I have learned in the Preliminary period - focusing on limits and functions.</p>
+              <button type="button" class="btn btn-card card-open" data-project="prlm-exam" aria-haspopup="dialog" aria-label="View Project: Prelims: Exam">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-            <div class="calculus-projects">
-                <div class="calculus-project-card">
-                    <h4 class="calc-title">Finals: Quiz 1</h4>
-                    <h6 class="score-container">Score: <span class="score">60/60</span></h6>
-                    <a href="finals-quiz1.html"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                    </a>
-                </div>
+          </article>
+          <article class="card" data-period="Midterms">
+            <div class="card-media"><img src="project_images/mid-basic-diff-formulas.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Midterms</p>
+              <h3 class="card-title">Midterms: Basic Differentiation Formulas</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>20/20</span>
+                <time datetime="2026-07-30">July 30, 2026</time></p>
+              <p class="card-preview">A practice on applying the basic differentiation formulas, focusing on the Power Rule and Sum Rule.</p>
+              <button type="button" class="btn btn-card card-open" data-project="mid-basic-diff-formula" aria-haspopup="dialog" aria-label="View Project: Midterms: Basic Differentiation Formulas">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p class="section-subtitle">A selection of projects I've worked on.</p>
-                <div class="section-divider"></div>
+          </article>
+          <article class="card" data-period="Midterms">
+            <div class="card-media"><img src="project_images/mid-chain-rule-1.jpg" alt="" loading="lazy" decoding="async"><span class="card-pages">3 pages</span></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Midterms</p>
+              <h3 class="card-title">Midterms: The Chain Rule</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>18/20</span>
+                <time datetime="2026-07-30">July 30, 2026</time></p>
+              <p class="card-preview">An activity covering the application of the Chain Rule, Product Rule, and Quotient Rule in differentiating functions.</p>
+              <button type="button" class="btn btn-card card-open" data-project="mid-chain-rule" aria-haspopup="dialog" aria-label="View Project: Midterms: The Chain Rule">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-
-            <div class="projects-grid">
-                <!-- PROJECT 1 -->
-                <article class="project-tile project-card">
-                    <img src="https://sianai-cybsec.github.io/Learners-Integrated-Network-for-Academics-LINA-/graphics/lina_logo.png" alt="Learner's Integrated Network for Academics interface" class="project-img">
-                    <div class="project-card-content">
-                        <h3 class="project-card-title">Learner's Integrated Network for Academics (LINA)</h3>
-                        <p class="project-description">
-                            "Towards Better Learning," LINA is a mobile-first app and website that serves as a platform for students to share notes, modules, and lessons with each other --- for the curious, lost, confused, and inquisitive mind to learn.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">[HTML]</span>
-                            <span class="tech-tag">[CSS]</span>
-                            <span class="tech-tag">[Academic Network]</span>
-                        </div>
-                        <a href="https://sianai-cybsec.github.io/Learners-Integrated-Network-for-Academics-LINA-/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 2 -->
-                <article class="project-tile project-card">
-                    <img src="https://figures.academia-assets.com/38282852/figure_006.jpg" alt="Amanu Kapampangan Simple Language Model interface" class="project-img">
-                    <div class="project-card-content">
-                        <h3 class="project-card-title">Amanu Kapampangan Simple Language Model</h3>
-                        <p class="project-description">
-                            Amanu is a simple n-gram language model that predicts the next word in Kapampangan text. Give it a syllable or partial phrase, and it suggests the most likely next words based on probabilities learned from a training corpus.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">[NLP / AI]</span>
-                            <span class="tech-tag">[Language Model]</span>
-                            <span class="tech-tag">[Python]</span>
-                        </div>
-                        <a href="https://github.com/sianAI-CybSec/Amanu-Kapampangan-Simple-Language-Model"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 3 -->
-                <article class="project-tile project-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZeLMlZon2n9QrVjIOCnEfxVqwXglTR4SDdZ3dehAX0TcscrG2C_k0zo&s=10" alt="General Earth Science Calculator interface" class="project-img">
-                    <div class="project-card-content">
-                        <h3 class="project-card-title">General Earth Science Calculator — Python</h3>
-                        <p class="project-description">
-                            A beginner project on basic Python arithmetic operations on common parameters used in Earth Science. Feel free to use the code if you want!
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">[Python]</span>
-                            <span class="tech-tag">[Earth Science]</span>
-                            <span class="tech-tag">[CLI / Tool]</span>
-                        </div>
-                        <a href="https://github.com/sianAI-CybSec/General-Earth-Science-Calculator-Python"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 4 -->
-                <article class="project-tile project-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS838tkVPblgwxu0v-5huXQIp3uvkA5PJYk2j4AXRLTof-vFx9VOK2mA8-Y&s=10" alt="Witch Hat Atelier Survey Form preview" class="project-img">
-                    <div class="project-card-content">
-                        <h3 class="project-card-title">Witch Hat Atelier Survey Form</h3>
-                        <p class="project-description">
-                            A themed HTML/CSS survey form inspired by Witch Hat Atelier, where users apply to be assigned to a witch's atelier based on their magical specialization, expertise level, and areas of interest.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">[HTML5]</span>
-                            <span class="tech-tag">[CSS3]</span>
-                            <span class="tech-tag">[Forms]</span>
-                        </div>
-                        <a href="https://github.com/sianAI-CybSec/Witch-Hat-Atelier-Survey-Form"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                        </a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 5 -->
-                <article class="project-tile project-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1TwbnJ74V2EKkq8U2yNQ9LfJIXQOt13T9ZOwlsDM_LOV8Ye4dKOBgVpke&s=10" alt="Mole Converter Python interface" class="project-img">
-                    <div class="project-card-content">
-                        <h3 class="project-card-title">Mole Converter — Python</h3>
-                        <p class="project-description">
-                            A trial on converting a Python calculation program into a program with a simple tkinter GUI. Feel free to use the code if you want!
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">[Python]</span>
-                            <span class="tech-tag">[Chemistry]</span>
-                            <span class="tech-tag">[Utility]</span>
-                        </div>
-                        <a href="https://github.com/sianAI-CybSec/Mole-Converter-Python"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-project">
-                        View Project &rarr;
-                        </a>
-                    </div>
-                </article>
+          </article>
+          <article class="card" data-period="Midterms">
+            <div class="card-media"><img src="project_images/mid-imptri-1.jpg" alt="" loading="lazy" decoding="async"><span class="card-pages">2 pages</span></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Midterms</p>
+              <h3 class="card-title">Midterms: Implicit, Trigo, &amp; Exp Differentiation Activity</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>22/22</span>
+                <time datetime="2026-08-20">August 20, 2026</time></p>
+              <p class="card-preview">An activity to assess understanding the concepts and applying them to solve differentiation involving implicit, trigonometric, and exponential functions.</p>
+              <button type="button" class="btn btn-card card-open" data-project="mid-imptri" aria-haspopup="dialog" aria-label="View Project: Midterms: Implicit, Trigo, &amp; Exp Differentiation Activity">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-        </section>
-
-        <section id="achievements" class="achievements-section">
-            <div class="section-header">
-                <h2>My Recent Achievements</h2>
-                <p class="section-subtitle">Artifacts of my service to the community and my growth</p>
-                <div class="section-divider"></div>
+          </article>
+          <article class="card" data-period="Midterms">
+            <div class="card-media card-media-video"><svg class="card-play" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="44"/><path d="M50 40v40l34-20z"/></svg><span class="card-pages">Video</span></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Midterms</p>
+              <h3 class="card-title">Midterms Requirement: Video Tutorial</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>47/55</span>
+                <time datetime="2026-08-27">August 27, 2026</time></p>
+              <p class="card-preview">A 5-member groupwork where we simulate teaching Differential Calculus and its fundamental rules to students using a Little Einsteins theme.</p>
+              <button type="button" class="btn btn-card card-open" data-project="mid-req" aria-haspopup="dialog" aria-label="View Project: Midterms Requirement: Video Tutorial">View Project <span aria-hidden="true">&rarr;</span></button>
             </div>
-
-            <div class="achievements-grid">
-                <div class="achievements-card">
-                    <img src="https://scontent.fcrk1-5.fna.fbcdn.net/v/t39.99422-6/786303641_1720558862328599_3854556131346905449_n.png?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEQ89_1VDOeCMluPCJ5DQrbWigE4Zk2B99aKAThmTYH3zFwZnRyQtMiSZFrC_BoiH4k6Lug-ieaU_WOLaJryERD&_nc_ohc=ob5HEQ-JuPQQ7kNvwHB8RbC&_nc_oc=AdrDHN096difYqqAf3CYprqU3znSdBBnn5qU1ZWWy35TByhsHjhKqMcveJ35ntVpDug&_nc_zt=14&_nc_ht=scontent.fcrk1-5.fna&_nc_gid=wkyVV4OzkX15GOHG5Qt4ew&_nc_ss=7b2a8&oh=00_AQNZIPgP8RGq8MxH3aIS9z9vTM15Maoiw13Y59vyfs_sfw&oe=6AD25CAB"
-                    alt="8th Place Best News">
-                    <div class="achievements-info">
-                        <h3 class="achievement-card-title">YJPFC 8th Best News Entry</h3>
-                        <p>My 8th Place news article in the Young Journalists Press Freedom Conference 2026.</p>
-                        <p id="news-title">"Oil price hike affect Angelites amid Middle East crisis"</p>
-                    </div>
-                    <a href="https://www.facebook.com/share/p/1KMUeEh6bp/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-project btn-achievement">
-                        View Achievement &rarr;
-                    </a>
-                </div>
+          </article>
+          <article class="card" data-period="Finals">
+            <div class="card-media"><img src="project_images/finals-integ-drill-1.jpg" alt="" loading="lazy" decoding="async"><span class="card-pages">3 pages</span></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Finals</p>
+              <h3 class="card-title">Finals: Integrals Drill</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>20/20</span>
+                <time datetime="2026-09-14">September 14, 2026</time></p>
+              <p class="card-preview">An activity to practice basic and fundamental Integral Calculus concepts.</p>
+              <button type="button" class="btn btn-card card-open" data-project="finals-integ-drill" aria-haspopup="dialog" aria-label="View Project: Finals: Integrals Drill">View Project <span aria-hidden="true">&rarr;</span></button>
+            </div>
+          </article>
+          <article class="card" data-period="Finals">
+            <div class="card-media"><img src="project_images/finals-act-2.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Finals</p>
+              <h3 class="card-title">Finals: Integrals Activity 2</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>14/14</span>
+                <time datetime="2026-09-21">September 21, 2026</time></p>
+              <p class="card-preview">An activity to apply Integral Calculus with trigonometric functions.</p>
+              <button type="button" class="btn btn-card card-open" data-project="finals-act2" aria-haspopup="dialog" aria-label="View Project: Finals: Integrals Activity 2">View Project <span aria-hidden="true">&rarr;</span></button>
+            </div>
+          </article>
+          <article class="card" data-period="Finals">
+            <div class="card-media"><img src="project_images/finals-quiz-1.jpg" alt="" loading="lazy" decoding="async"><span class="card-pages">3 pages</span></div>
+            <div class="card-body">
+              <p class="card-eyebrow">Finals</p>
+              <h3 class="card-title">Finals: Quiz 1</h3>
+              <p class="card-score"><span class="score-badge"><span class="visually-hidden">Score: </span>60/60</span>
+                <time datetime="2026-10-01">October 1, 2026</time></p>
+              <p class="card-preview">A culmination of my finals learning. The quiz covered integration concepts from polynomial functions to trigonometric functions and applications of all lessons from functions and differentiation.</p>
+              <button type="button" class="btn btn-card card-open" data-project="finals-quiz1" aria-haspopup="dialog" aria-label="View Project: Finals: Quiz 1">View Project <span aria-hidden="true">&rarr;</span></button>
+            </div>
+          </article>
             </div>
         </section>
 
         <!-- =========================
-            CONTACT SECTION
-            ========================= -->
-        <section id="contact" class="contact-section">
+             REFLECTIONS
+             ========================= -->
+        <section id="reflections" class="section" aria-labelledby="reflections-title">
             <div class="section-header">
-                <h2>Let's Connect</h2>
+                <h2 id="reflections-title">Reflections</h2>
+                <p class="section-subtitle">The reflection I wrote for each calculus artifact, collected in one place</p>
+                <div class="section-divider" aria-hidden="true"></div>
+            </div>
+            
+          <div class="reflection-group">
+            <h3 class="group-title">Prelims</h3>
+            <div class="reflection-list">
+            <article class="reflection-card">
+              <header>
+                <h4>Operations on Functions Activity</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>20/20</span> <time datetime="2026-06-25">June 25, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>With the first activity ever in Calculus, I thought that the lesson on functions was repeated again despite learning about them in the previous semester. Nevertheless, I found the lesson and activity on functions as beneficial since it not only refreshes concepts that I have forgotten (such as the composition of functions), but also aligns the topic to Calculus concepts I have used later on.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="prlm-ops-on-func" aria-haspopup="dialog" aria-label="View Project: Prelims: Operations on Functions">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Introduction to Derivatives Activity</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>20/20</span> <time datetime="2026-07-02">July 2, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>With this introduction, I have realized that it built and tested my capability to mentally solve differentiation problems using the concept of the derivative and the Power Rule. I have since then used this to help me throughout my Calculus journey, and even strengthen my ability to recognize patterns.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="prlm-intro-diff" aria-haspopup="dialog" aria-label="View Project: Prelims: Introduction to Derivatives">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Derivatives Practice Activity</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>10/10</span> <time datetime="2026-07-20">July 20, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>As said by Mr. Gil Tiongco, practice is everything. The practice activity then geared me up to always practice everything in Calculus - no matter what.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="prlm-diffprac" aria-haspopup="dialog" aria-label="View Project: Prelims: Derivatives Practice">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Prelims Quiz 1 on Functions and Limits</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>45/45</span> <time datetime="2026-07-06">July 6, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>With the quiz, I have considered myself proficient in understanding the functions and limits in Calculus. Especially since these concepts are the fundamentals of Calculus, assessing my skills in being able to apply them properly has not only showed me what I need to improve on, but also strengthened my knowledge.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="prlm-quiz1" aria-haspopup="dialog" aria-label="View Project: Prelims: Quiz 1">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Infographics on the Limits and Functions in Computing</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>50/50</span> <time datetime="2026-07-13">July 13, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>Throughout the project, I first thought that Calculus is disconnected to my field, Cybersecurity, and to the rest of computing. But in making the infographic, I realized that mathematics, especially Calculus, really is the language of everything. Since I mostly work on programming and cybersecurity, calculus becomes a really helpful tool to me especially in the field of encryption where the time of cracking the lock can reach a limit - especially on public and private keys that relies on large prime numbers. With this, I really loved that I can use Calculus to help me in my future profession.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="prlm-req" aria-haspopup="dialog" aria-label="View Project: Prelims Requirement: Infographics on Limits">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Prelims Calculus Exam</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>49/50</span> <time datetime="2026-07-14">July 14, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>This prelim exam showed me that practicing in Calculus resulted in better performance and better competence in applying functions and limits concepts to various problems. And with the exam, I realized that purely solving is not enough, but instead what makes learning in Calculus complete is knowing the fundamentals and grasping a good understanding of the concept. Since without the concept, the application cannot be applied appropriately.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="prlm-exam" aria-haspopup="dialog" aria-label="View Project: Prelims: Exam">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            </div>
+          </div>
+          <div class="reflection-group">
+            <h3 class="group-title">Midterms</h3>
+            <div class="reflection-list">
+            <article class="reflection-card">
+              <header>
+                <h4>Basic Differentiation Formulas Activity</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>20/20</span> <time datetime="2026-07-30">July 30, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>The Basic Differentiation Formulas activity made me learn more about the application of the Power Rule and Sum Rule in not only basic functions, but also to functions with rational and negative exponents. Building upon the previous introduction to derivatives, I know that my ability to differentiate functions improved by being exposed to relatively more complicated functions.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="mid-basic-diff-formula" aria-haspopup="dialog" aria-label="View Project: Midterms: Basic Differentiation Formulas">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>The Chain Rule Activity</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>18/20</span> <time datetime="2026-07-30">July 30, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>During the activity, I knew that I will be having a bit of a difficult time in completing the activity since the Chain Rule is new to me. It was reflected in my score as I got an 18/20. With this, I knew that practicing my Chain Rule - aside from the Product Rule and Quotient Rule - skills became one of my priorities in learning Calculus since later on, it would be helpful in doing integration.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="mid-chain-rule" aria-haspopup="dialog" aria-label="View Project: Midterms: The Chain Rule">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Implicit, Trigonometry, Exponent Differentiation Activity</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>22/22</span> <time datetime="2026-08-20">August 20, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>At first, I thought that implicit, trigonometric, and exponential function differentiation would be difficult. But, I eventually learned that they are just intimidating, not difficult, since once the concept and formula is used, I was able to solve the equation. This lesson taught me that in Calculus, as long as I follow the concept and formula, I will be okay. This then helped me further with my programming competency, since using the knowledge base and using established, reliable programs or codes not only made my work and education easier, but also more professional.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="mid-imptri" aria-haspopup="dialog" aria-label="View Project: Midterms: Implicit, Trigo, &amp; Exp Differentiation Activity">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Midterms Req: Video Tutorial on Differential Calculus</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>47/55</span> <time datetime="2026-08-27">August 27, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>In all honesty, I find our group's performance for this project lacking since we got a low score of 47 out of 50. For me, I know that I can finish the project on my own since I already did seminars and taught students about various topics in different schools. So I thought that this will be something I can finish on my own. However, I realized that it is best for the group to utilize their skills and do what they want. With this, we finished the work much faster and considerably okay - but I noticed that there were some errors along the way. I went with it since this is what my groupmates did. At the end of the day, what I learned most is that working with others is fun. And despite gaining a low score, teamwork is the best thing I learned during the project since we got to know a bit more of each other's skills (which I can use for my future profession). And, we also learned a lot from our mistakes.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="mid-req" aria-haspopup="dialog" aria-label="View Project: Midterms Requirement: Video Tutorial">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            </div>
+          </div>
+          <div class="reflection-group">
+            <h3 class="group-title">Finals</h3>
+            <div class="reflection-list">
+            <article class="reflection-card">
+              <header>
+                <h4>Integrals Drill</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>20/20</span> <time datetime="2026-09-14">September 14, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>With this activity, I further improved my integration skills for functions since I learned the fundamental concepts in this activity. Furthermore, I managed to use my previous learning with derivatives to apply it in u-substitution concepts in integrating the functions.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="finals-integ-drill" aria-haspopup="dialog" aria-label="View Project: Finals: Integrals Drill">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Integrals Activity 2</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>14/14</span> <time datetime="2026-09-21">September 21, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>With this activity, I learned the importance of learning the derivatives of trigonometric functions first before integration. Because with integrating trigonometric functions, it is basically reversing the differentiation process - which now I find fascinating on how I can use past lessons to help me solve integrals.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="finals-act2" aria-haspopup="dialog" aria-label="View Project: Finals: Integrals Activity 2">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            <article class="reflection-card">
+              <header>
+                <h4>Finals: Quiz 1</h4>
+                <p class="reflection-meta"><span class="score-badge"><span class="visually-hidden">Score: </span>60/60</span> <time datetime="2026-10-01">October 1, 2026</time></p>
+              </header>
+              <blockquote class="reflection-text"><p>With the quiz, I have considered myself proficient in understanding the application of integration rules in Calculus. Especially since polynomial, trigonometric, and <var>e<sup>x</sup></var> functions are the fundamentals of integral Calculus, assessing my skills in being able to apply them properly has not only showed me what I need to improve on, but also strengthened my knowledge. After this, I can say that I can do fundamental Calculus proficiently. From learning basic functions to differentiation to now integrals, I consider my learnings in Calculus very fun and I really hope that I can use them effectively in my next journey in Cybersecurity.</p></blockquote>
+              <button type="button" class="btn btn-ghost card-open" data-project="finals-quiz1" aria-haspopup="dialog" aria-label="View Project: Finals: Quiz 1">View the artifact <span aria-hidden="true">&rarr;</span></button>
+            </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             FEATURED PROJECTS
+             ========================= -->
+        <section id="projects" class="section section-alt" aria-labelledby="projects-title">
+            <div class="section-header">
+                <h2 id="projects-title">Featured Projects</h2>
+                <p class="section-subtitle">A selection of projects I've worked on.</p>
+                <div class="section-divider" aria-hidden="true"></div>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-tile">
+                    <div class="project-img-wrap"><img src="https://sianai-cybsec.github.io/Learners-Integrated-Network-for-Academics-LINA-/graphics/lina_logo.png" alt="Learner's Integrated Network for Academics interface" class="project-img" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Learner's Integrated Network for Academics (LINA)</h3>
+                        <p class="project-description">"Towards Better Learning," LINA is a mobile-first app and website that serves as a platform for students to share notes, modules, and lessons with each other --- for the curious, lost, confused, and inquisitive mind to learn.</p>
+                        <ul class="tag-list" aria-label="Technologies and topics">
+                            <li class="tech-tag">[HTML]</li>
+                            <li class="tech-tag">[CSS]</li>
+                            <li class="tech-tag">[Academic Network]</li>
+                        </ul>
+                        <a href="https://sianai-cybsec.github.io/Learners-Integrated-Network-for-Academics-LINA-/" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Project <span aria-hidden="true">&rarr;</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <div class="project-img-wrap"><img src="https://figures.academia-assets.com/38282852/figure_006.jpg" alt="Amanu Kapampangan Simple Language Model interface" class="project-img" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Amanu Kapampangan Simple Language Model</h3>
+                        <p class="project-description">Amanu is a simple n-gram language model that predicts the next word in Kapampangan text. Give it a syllable or partial phrase, and it suggests the most likely next words based on probabilities learned from a training corpus.</p>
+                        <ul class="tag-list" aria-label="Technologies and topics">
+                            <li class="tech-tag">[NLP / AI]</li>
+                            <li class="tech-tag">[Language Model]</li>
+                            <li class="tech-tag">[Python]</li>
+                        </ul>
+                        <a href="https://github.com/sianAI-CybSec/Amanu-Kapampangan-Simple-Language-Model" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Project <span aria-hidden="true">&rarr;</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <div class="project-img-wrap"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZeLMlZon2n9QrVjIOCnEfxVqwXglTR4SDdZ3dehAX0TcscrG2C_k0zo&amp;s=10" alt="General Earth Science Calculator interface" class="project-img" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">General Earth Science Calculator &mdash; Python</h3>
+                        <p class="project-description">A beginner project on basic Python arithmetic operations on common parameters used in Earth Science. Feel free to use the code if you want!</p>
+                        <ul class="tag-list" aria-label="Technologies and topics">
+                            <li class="tech-tag">[Python]</li>
+                            <li class="tech-tag">[Earth Science]</li>
+                            <li class="tech-tag">[CLI / Tool]</li>
+                        </ul>
+                        <a href="https://github.com/sianAI-CybSec/General-Earth-Science-Calculator-Python" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Project <span aria-hidden="true">&rarr;</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <div class="project-img-wrap"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS838tkVPblgwxu0v-5huXQIp3uvkA5PJYk2j4AXRLTof-vFx9VOK2mA8-Y&amp;s=10" alt="Witch Hat Atelier Survey Form preview" class="project-img" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Witch Hat Atelier Survey Form</h3>
+                        <p class="project-description">A themed HTML/CSS survey form inspired by Witch Hat Atelier, where users apply to be assigned to a witch's atelier based on their magical specialization, expertise level, and areas of interest.</p>
+                        <ul class="tag-list" aria-label="Technologies and topics">
+                            <li class="tech-tag">[HTML5]</li>
+                            <li class="tech-tag">[CSS3]</li>
+                            <li class="tech-tag">[Forms]</li>
+                        </ul>
+                        <a href="https://github.com/sianAI-CybSec/Witch-Hat-Atelier-Survey-Form" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Project <span aria-hidden="true">&rarr;</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <div class="project-img-wrap"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1TwbnJ74V2EKkq8U2yNQ9LfJIXQOt13T9ZOwlsDM_LOV8Ye4dKOBgVpke&amp;s=10" alt="Mole Converter Python interface" class="project-img" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Mole Converter &mdash; Python</h3>
+                        <p class="project-description">A trial on converting a Python calculation program into a program with a simple tkinter GUI. Feel free to use the code if you want!</p>
+                        <ul class="tag-list" aria-label="Technologies and topics">
+                            <li class="tech-tag">[Python]</li>
+                            <li class="tech-tag">[Chemistry]</li>
+                            <li class="tech-tag">[Utility]</li>
+                        </ul>
+                        <a href="https://github.com/sianAI-CybSec/Mole-Converter-Python" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Project <span aria-hidden="true">&rarr;</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- =========================
+             ACHIEVEMENTS
+             ========================= -->
+        <section id="achievements" class="section" aria-labelledby="achievements-title">
+            <div class="section-header">
+                <h2 id="achievements-title">My Recent Achievements</h2>
+                <p class="section-subtitle">Artifacts of my service to the community and my growth</p>
+                <div class="section-divider" aria-hidden="true"></div>
+            </div>
+
+            <div class="achievements-grid">
+                <article class="achievement-card">
+                    <div class="achievement-img-wrap"><img src="https://scontent.fcrk1-5.fna.fbcdn.net/v/t39.99422-6/786303641_1720558862328599_3854556131346905449_n.png?stp=dst-jpg_tt6&amp;cstp=mx1080x1080&amp;ctp=s1080x1080&amp;_nc_cat=105&amp;_nc_map=urlgen_bucketless&amp;ccb=1-7&amp;_nc_sid=127cfc&amp;_nc_eui2=AeEQ89_1VDOeCMluPCJ5DQrbWigE4Zk2B99aKAThmTYH3zFwZnRyQtMiSZFrC_BoiH4k6Lug-ieaU_WOLaJryERD&amp;_nc_ohc=ob5HEQ-JuPQQ7kNvwHB8RbC&amp;_nc_oc=AdrDHN096difYqqAf3CYprqU3znSdBBnn5qU1ZWWy35TByhsHjhKqMcveJ35ntVpDug&amp;_nc_zt=14&amp;_nc_ht=scontent.fcrk1-5.fna&amp;_nc_gid=wkyVV4OzkX15GOHG5Qt4ew&amp;_nc_ss=7b2a8&amp;oh=00_AQNZIPgP8RGq8MxH3aIS9z9vTM15Maoiw13Y59vyfs_sfw&amp;oe=6AD25CAB" alt="8th Place Best News" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="achievement-info">
+                        <h3 class="achievement-card-title">YJPFC 8th Best News Entry</h3>
+                        <p>My 8th Place news article in the Young Journalists Press Freedom Conference 2026.</p>
+                        <p class="news-title">"Oil price hike affect Angelites amid Middle East crisis"</p>
+                        <a href="https://www.facebook.com/share/p/1KMUeEh6bp/" target="_blank" rel="noopener noreferrer" class="btn btn-card">View Achievement <span aria-hidden="true">&rarr;</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- =========================
+             CONTACT
+             ========================= -->
+        <section id="contact" class="section section-alt" aria-labelledby="contact-title">
+            <div class="section-header">
+                <h2 id="contact-title">Let's Connect</h2>
                 <p class="section-subtitle">Reach out and maybe we can learn from each other!</p>
-                <div class="section-divider"></div>
+                <div class="section-divider" aria-hidden="true"></div>
             </div>
 
             <div class="contact-grid">
-                <!-- Contact Direct Info -->
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     <p class="contact-intro">I'm always open to discussing new projects, technical challenges, or learning opportunities.</p>
-
                     <ul class="contact-details">
-                        <li>
-                            <span class="detail-label">Email:</span>
-                            <a href="mailto:caranto.crisiane@gmail.com">caranto.crisiane@gmail.com</a>
-                        </li>
-                        <li>
-                            <span class="detail-label">GitHub:</span>
-                            <a id="profile-link" href="https://github.com/sianAI-CybSec" target="_blank" rel="noopener noreferrer">My GitHub</a>
-                        </li>
-                        <li>
-                            <span class="detail-label">LinkedIn:</span>
-                            <a href="https://www.linkedin.com/in/crisiane-josef-caranto-18002338b" target="_blank" rel="noopener noreferrer">My LinkedIn</a>
-                        </li>
-                        <li>
-                            <span class="detail-label">Other:</span>
-                            <a href="https://www.facebook.com/crisianejosef.caranto.31/" target="_blank" rel="noopener noreferrer">My Facebook</a>
-                        </li>
+                        <li><span class="detail-label">Email:</span> <a href="mailto:caranto.crisiane@gmail.com">caranto.crisiane@gmail.com</a></li>
+                        <li><span class="detail-label">GitHub:</span> <a href="https://github.com/sianAI-CybSec" target="_blank" rel="noopener noreferrer">My GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                        <li><span class="detail-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/crisiane-josef-caranto-18002338b" target="_blank" rel="noopener noreferrer">My LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                        <li><span class="detail-label">Other:</span> <a href="https://www.facebook.com/crisianejosef.caranto.31/" target="_blank" rel="noopener noreferrer">My Facebook<span class="visually-hidden"> (opens in a new tab)</span></a></li>
                     </ul>
                 </div>
 
-                <!-- Contact Form -->
                 <div class="contact-form-container">
-                    <form class="contact-form" action="#" method="POST">
+                    <form class="contact-form" id="contact-form" action="mailto:caranto.crisiane@gmail.com" method="post" enctype="text/plain">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" autocomplete="name" required>
                         </div>
-
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" autocomplete="email" required>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
                         </div>
-
                         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -493,9 +586,9 @@
     </main>
 
     <!-- =========================
-        FOOTER
-        ========================= -->
-    <footer class="footer">
+         FOOTER
+         ========================= -->
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-info">
                 <p class="footer-name">&lt;Crisiane Josef Caranto/&gt;</p>
@@ -506,10 +599,530 @@
                 <p><em>"Believe me, I could do it!" - Taylor Swift, tolerate it</em></p>
             </div>
             <div class="footer-top-link">
-                <a href="#welcome-section" class="back-to-top">Back to Top &uarr;</a>
+                <a href="#welcome-section" class="back-to-top">Back to Top <span aria-hidden="true">&uarr;</span></a>
             </div>
         </div>
     </footer>
 
+    <!-- =========================
+         PROJECT POPUP (one dialog, filled from the templates below)
+         ========================= -->
+    <dialog id="project-modal" class="modal" aria-labelledby="modal-title">
+        <div class="modal-panel">
+            <header class="modal-header">
+                <div class="modal-heading">
+                    <p class="modal-eyebrow" id="modal-eyebrow"></p>
+                    <div id="modal-title-slot"></div>
+                </div>
+                <button type="button" class="modal-close" id="modal-close" aria-label="Close project"><span aria-hidden="true">&times;</span></button>
+            </header>
+            <div class="modal-body" id="modal-body" tabindex="0" aria-label="Project details"></div>
+            <footer class="modal-footer">
+                <button type="button" class="btn btn-ghost" id="modal-prev"><span aria-hidden="true">&larr;</span> Previous</button>
+                <button type="button" class="btn btn-secondary" id="modal-back">Back to gallery</button>
+                <button type="button" class="btn btn-ghost" id="modal-next">Next <span aria-hidden="true">&rarr;</span></button>
+            </footer>
+        </div>
+    </dialog>
+
+    <!-- =========================
+         PROJECT CONTENT (complete original content of every calculus project)
+         ========================= -->
+    <template id="tpl-prlm-ops-on-func" data-period="Prelims" data-card="Prelims: Operations on Functions">
+      <h2 class="project-title">Operations on Functions Activity</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-06-25">June 25, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">20/20</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-prlm-ops-on-func">
+        <h3 id="d-prlm-ops-on-func" class="section-label">Description</h3>
+        <p>A re-assessment on functions as the fundamentals of Calculus since the concepts were already covered in our previous Discrete Maths subject. It helped re-angle my mind towards a mind-space where I would Calculus with basic understanding and structure - since I think that the lessons in Calculus I learned relates back to functions.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-prlm-ops-on-func">
+        <h3 id="a-prlm-ops-on-func" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-1"><figure class="work-figure"><a class="work-link" href="project_images/prlm-ops_on_functions.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Original work, Operations on Functions Activity (opens in a new tab)"><img src="project_images/prlm-ops_on_functions.jpg" alt="Handwritten solution sheet for the Operations on Functions Activity, covering function operations and composition, scored 20/20" loading="lazy" decoding="async"></a><figcaption>Original work<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-prlm-ops-on-func">
+        <h3 id="o-prlm-ops-on-func" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Reassess my prior understanding of functions before Calculus proper</li><li>Revisit my understanding of functions</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-prlm-ops-on-func">
+        <h3 id="r-prlm-ops-on-func" class="section-label">Reflection</h3>
+        <p>With the first activity ever in Calculus, I thought that the lesson on functions was repeated again despite learning about them in the previous semester. Nevertheless, I found the lesson and activity on functions as beneficial since it not only refreshes concepts that I have forgotten (such as the composition of functions), but also aligns the topic to Calculus concepts I have used later on.</p>
+      </section>
+    </template>
+    <template id="tpl-prlm-intro-diff" data-period="Prelims" data-card="Prelims: Introduction to Derivatives">
+      <h2 class="project-title">Introduction to Derivatives Activity</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-07-02">July 2, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">20/20</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-prlm-intro-diff">
+        <h3 id="d-prlm-intro-diff" class="section-label">Description</h3>
+        <p>This activity introduced me into the basics of one of the fundamental fields of Calculus: Differential Calculus. For this introduction, it assessed my application of the fundamental rules on differentiation such as the Power Rule.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-prlm-intro-diff">
+        <h3 id="a-prlm-intro-diff" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-1"><figure class="work-figure"><a class="work-link" href="project_images/prlm-intro-diff.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Original work, Introduction to Derivatives Activity (opens in a new tab)"><img src="project_images/prlm-intro-diff.jpg" alt="Handwritten solution sheet for the Introduction to Derivatives Activity, applying the Power Rule, scored 20/20" loading="lazy" decoding="async"></a><figcaption>Original work<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-prlm-intro-diff">
+        <h3 id="o-prlm-intro-diff" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Introduce differential calculus and its concept</li><li>Apply the Power Rule to differentiate functions</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-prlm-intro-diff">
+        <h3 id="r-prlm-intro-diff" class="section-label">Reflection</h3>
+        <p>With this introduction, I have realized that it built and tested my capability to mentally solve differentiation problems using the concept of the derivative and the Power Rule. I have since then used this to help me throughout my Calculus journey, and even strengthen my ability to recognize patterns.</p>
+      </section>
+    </template>
+    <template id="tpl-prlm-diffprac" data-period="Prelims" data-card="Prelims: Derivatives Practice">
+      <h2 class="project-title">Derivatives Practice Activity</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-07-20">July 20, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">10/10</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-prlm-diffprac">
+        <h3 id="d-prlm-diffprac" class="section-label">Description</h3>
+        <p>A practice activity for helping me to reinforce my learning and understanding of derivatives, especially on fractional functions, polynomials, and root exponents.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-prlm-diffprac">
+        <h3 id="a-prlm-diffprac" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-1"><figure class="work-figure"><a class="work-link" href="project_images/prlm-diffprac.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Original work, Derivatives Practice Activity (opens in a new tab)"><img src="project_images/prlm-diffprac.jpg" alt="Handwritten solution sheet for the Derivatives Practice Activity, scored 10/10" loading="lazy" decoding="async"></a><figcaption>Original work<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-prlm-diffprac">
+        <h3 id="o-prlm-diffprac" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Practice differentiating various functions</li><li>Apply the Power Rule to polynomials, fractional functions, and root exponents</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-prlm-diffprac">
+        <h3 id="r-prlm-diffprac" class="section-label">Reflection</h3>
+        <p>As said by Mr. Gil Tiongco, practice is everything. The practice activity then geared me up to always practice everything in Calculus - no matter what.</p>
+      </section>
+    </template>
+    <template id="tpl-prlm-quiz1" data-period="Prelims" data-card="Prelims: Quiz 1">
+      <h2 class="project-title">Prelims Quiz 1 on Functions and Limits</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-07-06">July 6, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">45/45</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-prlm-quiz1">
+        <h3 id="d-prlm-quiz1" class="section-label">Description</h3>
+        <p>My first Prelim Quiz where I showed my competency in understanding and solving functions and limits.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-prlm-quiz1">
+        <h3 id="a-prlm-quiz1" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-1"><figure class="work-figure"><a class="work-link" href="project_images/prlm-quiz1.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Original work, Prelims Quiz 1 on Functions and Limits (opens in a new tab)"><img src="project_images/prlm-quiz1.jpg" alt="Handwritten solution sheet for Prelims Quiz 1 on Functions and Limits, scored 45/45" loading="lazy" decoding="async"></a><figcaption>Original work<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-prlm-quiz1">
+        <h3 id="o-prlm-quiz1" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Apply functions and limits</li><li>Comprehend and solve problems regarding functions and limits</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-prlm-quiz1">
+        <h3 id="r-prlm-quiz1" class="section-label">Reflection</h3>
+        <p>With the quiz, I have considered myself proficient in understanding the functions and limits in Calculus. Especially since these concepts are the fundamentals of Calculus, assessing my skills in being able to apply them properly has not only showed me what I need to improve on, but also strengthened my knowledge.</p>
+      </section>
+    </template>
+    <template id="tpl-prlm-req" data-period="Prelims" data-card="Prelims Requirement: Infographics on Limits">
+      <h2 class="project-title">Infographics on the Limits and Functions in Computing</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-07-13">July 13, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">50/50</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-prlm-req">
+        <h3 id="d-prlm-req" class="section-label">Description</h3>
+        <p>This infographic entitled 'THE_FUNCTIONS_OF_COMPUTING.html' presents how functions and limits are applied to different disciplines in the field of computing. From designing computer systems and Artificial Intelligence, to Data Science and Analytics and Internet, Web, and Security, functions and limits are applied to innovate and further improve upon our current technologies not only to make them more efficient, but also better for user experience.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-prlm-req">
+        <h3 id="a-prlm-req" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-1"><figure class="work-figure"><a class="work-link" href="project_images/prlm-req.png" target="_blank" rel="noopener" aria-label="Open full-size image: Original work, Infographics on the Limits and Functions in Computing (opens in a new tab)"><img src="project_images/prlm-req.png" alt="Infographic titled THE_FUNCTIONS_OF_COMPUTING.html, showing four computing fields: designing computer systems, artificial intelligence, data science and analytics, and internet, web, and security" loading="lazy" decoding="async"></a><figcaption>Original work<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-prlm-req">
+        <h3 id="o-prlm-req" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Show how Calculus is used in real-life applications</li><li>Present the importance of limits to computing</li><li>Showcase the various fields of computing and their connection to Calculus</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-prlm-req">
+        <h3 id="r-prlm-req" class="section-label">Reflection</h3>
+        <p>Throughout the project, I first thought that Calculus is disconnected to my field, Cybersecurity, and to the rest of computing. But in making the infographic, I realized that mathematics, especially Calculus, really is the language of everything. Since I mostly work on programming and cybersecurity, calculus becomes a really helpful tool to me especially in the field of encryption where the time of cracking the lock can reach a limit - especially on public and private keys that relies on large prime numbers. With this, I really loved that I can use Calculus to help me in my future profession.</p>
+      </section>
+    </template>
+    <template id="tpl-prlm-exam" data-period="Prelims" data-card="Prelims: Exam">
+      <h2 class="project-title">Prelims Calculus Exam</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-07-14">July 14, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">49/50</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-prlm-exam">
+        <h3 id="d-prlm-exam" class="section-label">Description</h3>
+        <p>A culmination of everything I have learned in the Preliminary period - focusing on limits and functions.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-prlm-exam">
+        <h3 id="a-prlm-exam" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-1"><figure class="work-figure"><a class="work-link" href="project_images/prlm-exam.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Original work, Prelims Calculus Exam (opens in a new tab)"><img src="project_images/prlm-exam.jpg" alt="Scanned answer sheet for the Prelims Calculus Exam, scored 49/50" loading="lazy" decoding="async"></a><figcaption>Original work<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-prlm-exam">
+        <h3 id="o-prlm-exam" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Understand fundamental Calculus concepts on functions and limits</li><li>Apply these concepts to solve problems on functions and limits</li><li>Recall every concept learned in the Preliminary period</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-prlm-exam">
+        <h3 id="r-prlm-exam" class="section-label">Reflection</h3>
+        <p>This prelim exam showed me that practicing in Calculus resulted in better performance and better competence in applying functions and limits concepts to various problems. And with the exam, I realized that purely solving is not enough, but instead what makes learning in Calculus complete is knowing the fundamentals and grasping a good understanding of the concept. Since without the concept, the application cannot be applied appropriately.</p>
+      </section>
+    </template>
+    <template id="tpl-mid-basic-diff-formula" data-period="Midterms" data-card="Midterms: Basic Differentiation Formulas">
+      <h2 class="project-title">Basic Differentiation Formulas Activity</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-07-30">July 30, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">20/20</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-mid-basic-diff-formula">
+        <h3 id="d-mid-basic-diff-formula" class="section-label">Description</h3>
+        <p>A practice on applying the basic differentiation formulas, focusing on the Power Rule and Sum Rule.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-mid-basic-diff-formula">
+        <h3 id="a-mid-basic-diff-formula" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-1"><figure class="work-figure"><a class="work-link" href="project_images/mid-basic-diff-formulas.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Original work, Basic Differentiation Formulas Activity (opens in a new tab)"><img src="project_images/mid-basic-diff-formulas.jpg" alt="Handwritten solution sheet for the Basic Differentiation Formulas Activity, applying the Power Rule and Sum Rule, scored 20/20" loading="lazy" decoding="async"></a><figcaption>Original work<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-mid-basic-diff-formula">
+        <h3 id="o-mid-basic-diff-formula" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Apply basic differentiation to various functions</li><li>Demonstrate the Power Rule and Sum Rule</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-mid-basic-diff-formula">
+        <h3 id="r-mid-basic-diff-formula" class="section-label">Reflection</h3>
+        <p>The Basic Differentiation Formulas activity made me learn more about the application of the Power Rule and Sum Rule in not only basic functions, but also to functions with rational and negative exponents. Building upon the previous introduction to derivatives, I know that my ability to differentiate functions improved by being exposed to relatively more complicated functions.</p>
+      </section>
+    </template>
+    <template id="tpl-mid-chain-rule" data-period="Midterms" data-card="Midterms: The Chain Rule">
+      <h2 class="project-title">The Chain Rule Activity</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-07-30">July 30, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">18/20</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-mid-chain-rule">
+        <h3 id="d-mid-chain-rule" class="section-label">Description</h3>
+        <p>An activity covering the application of the Chain Rule, Product Rule, and Quotient Rule in differentiating functions.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-mid-chain-rule">
+        <h3 id="a-mid-chain-rule" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-3"><figure class="work-figure"><a class="work-link" href="project_images/mid-chain-rule-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 1 of 3, The Chain Rule Activity (opens in a new tab)"><img src="project_images/mid-chain-rule-1.jpg" alt="Handwritten solution sheet for The Chain Rule Activity, page 1 of 3" loading="lazy" decoding="async"></a><figcaption>Page 1 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure><figure class="work-figure"><a class="work-link" href="project_images/mid-chain-rule-2.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 2 of 3, The Chain Rule Activity (opens in a new tab)"><img src="project_images/mid-chain-rule-2.jpg" alt="Handwritten solution sheet for The Chain Rule Activity, page 2 of 3" loading="lazy" decoding="async"></a><figcaption>Page 2 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure><figure class="work-figure"><a class="work-link" href="project_images/mid-chain-rule-3.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 3 of 3, The Chain Rule Activity (opens in a new tab)"><img src="project_images/mid-chain-rule-3.jpg" alt="Handwritten solution sheet for The Chain Rule Activity, page 3 of 3" loading="lazy" decoding="async"></a><figcaption>Page 3 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-mid-chain-rule">
+        <h3 id="o-mid-chain-rule" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Apply the advanced differentiation rules to various functions</li><li>Demonstrate analytical thinking in the appropriate use of different rules</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-mid-chain-rule">
+        <h3 id="r-mid-chain-rule" class="section-label">Reflection</h3>
+        <p>During the activity, I knew that I will be having a bit of a difficult time in completing the activity since the Chain Rule is new to me. It was reflected in my score as I got an 18/20. With this, I knew that practicing my Chain Rule - aside from the Product Rule and Quotient Rule - skills became one of my priorities in learning Calculus since later on, it would be helpful in doing integration.</p>
+      </section>
+    </template>
+    <template id="tpl-mid-imptri" data-period="Midterms" data-card="Midterms: Implicit, Trigo, &amp; Exp Differentiation Activity">
+      <h2 class="project-title">Implicit, Trigonometry, Exponent Differentiation Activity</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-08-20">August 20, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">22/22</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-mid-imptri">
+        <h3 id="d-mid-imptri" class="section-label">Description</h3>
+        <p>An activity to assess understanding the concepts and applying them to solve differentiation involving implicit, trigonometric, and exponential functions.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-mid-imptri">
+        <h3 id="a-mid-imptri" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-2"><figure class="work-figure"><a class="work-link" href="project_images/mid-imptri-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 1 of 2, Implicit, Trigonometry, Exponent Differentiation Activity (opens in a new tab)"><img src="project_images/mid-imptri-1.jpg" alt="Handwritten solution sheet for the Implicit, Trigonometry, Exponent Differentiation Activity, page 1 of 2" loading="lazy" decoding="async"></a><figcaption>Page 1 of 2<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure><figure class="work-figure"><a class="work-link" href="project_images/mid-imptri-2.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 2 of 2, Implicit, Trigonometry, Exponent Differentiation Activity (opens in a new tab)"><img src="project_images/mid-imptri-2.jpg" alt="Handwritten solution sheet for the Implicit, Trigonometry, Exponent Differentiation Activity, page 2 of 2" loading="lazy" decoding="async"></a><figcaption>Page 2 of 2<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-mid-imptri">
+        <h3 id="o-mid-imptri" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Demonstrate analytical thinking in the appropriate use of various differential rules</li><li>Understand the concept of implicit, trigonometric, and exponential differentiation</li><li>Apply these fundamental rules and concepts to solve problems</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-mid-imptri">
+        <h3 id="r-mid-imptri" class="section-label">Reflection</h3>
+        <p>At first, I thought that implicit, trigonometric, and exponential function differentiation would be difficult. But, I eventually learned that they are just intimidating, not difficult, since once the concept and formula is used, I was able to solve the equation. This lesson taught me that in Calculus, as long as I follow the concept and formula, I will be okay. This then helped me further with my programming competency, since using the knowledge base and using established, reliable programs or codes not only made my work and education easier, but also more professional.</p>
+      </section>
+    </template>
+    <template id="tpl-mid-req" data-period="Midterms" data-card="Midterms Requirement: Video Tutorial">
+      <h2 class="project-title">Midterms Req: Video Tutorial on Differential Calculus</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-08-27">August 27, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">47/55</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-mid-req">
+        <h3 id="d-mid-req" class="section-label">Description</h3>
+        <p>A 5-member groupwork where we simulate teaching Differential Calculus and its fundamental rules to students using a Little Einsteins theme.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-mid-req">
+        <h3 id="a-mid-req" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="video-frame"><iframe data-src="https://www.youtube.com/embed/zUGtln1CIQM?si=2ci5pMY9l-xaYpyg" title="Video tutorial: Midterms Req: Video Tutorial on Differential Calculus" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-mid-req">
+        <h3 id="o-mid-req" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Create a video tutorial that showcases the concept of Derivatives</li><li>Illustrate the different formulas used in finding derivatives of various functions</li><li>Demonstrate at least five (5) specific examples of varying difficulty (Easy, Average, Difficult) on the use of each formula</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-mid-req">
+        <h3 id="r-mid-req" class="section-label">Reflection</h3>
+        <p>In all honesty, I find our group's performance for this project lacking since we got a low score of 47 out of 50. For me, I know that I can finish the project on my own since I already did seminars and taught students about various topics in different schools. So I thought that this will be something I can finish on my own. However, I realized that it is best for the group to utilize their skills and do what they want. With this, we finished the work much faster and considerably okay - but I noticed that there were some errors along the way. I went with it since this is what my groupmates did. At the end of the day, what I learned most is that working with others is fun. And despite gaining a low score, teamwork is the best thing I learned during the project since we got to know a bit more of each other's skills (which I can use for my future profession). And, we also learned a lot from our mistakes.</p>
+      </section>
+    </template>
+    <template id="tpl-finals-integ-drill" data-period="Finals" data-card="Finals: Integrals Drill">
+      <h2 class="project-title">Integrals Drill</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-09-14">September 14, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">20/20</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-finals-integ-drill">
+        <h3 id="d-finals-integ-drill" class="section-label">Description</h3>
+        <p>An activity to practice basic and fundamental Integral Calculus concepts.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-finals-integ-drill">
+        <h3 id="a-finals-integ-drill" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-3"><figure class="work-figure"><a class="work-link" href="project_images/finals-integ-drill-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 1 of 3, Integrals Drill (opens in a new tab)"><img src="project_images/finals-integ-drill-1.jpg" alt="Handwritten solution sheet for the Integrals Drill, page 1 of 3" loading="lazy" decoding="async"></a><figcaption>Page 1 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure><figure class="work-figure"><a class="work-link" href="project_images/finals-integ-drill-2.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 2 of 3, Integrals Drill (opens in a new tab)"><img src="project_images/finals-integ-drill-2.jpg" alt="Handwritten solution sheet for the Integrals Drill, page 2 of 3" loading="lazy" decoding="async"></a><figcaption>Page 2 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure><figure class="work-figure"><a class="work-link" href="project_images/finals-integ-drill-3.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 3 of 3, Integrals Drill (opens in a new tab)"><img src="project_images/finals-integ-drill-3.jpg" alt="Handwritten solution sheet for the Integrals Drill, page 3 of 3" loading="lazy" decoding="async"></a><figcaption>Page 3 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-finals-integ-drill">
+        <h3 id="o-finals-integ-drill" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Strengthen and practice knowledge on fundamental integration</li><li>Apply integration concepts to integrate functions</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-finals-integ-drill">
+        <h3 id="r-finals-integ-drill" class="section-label">Reflection</h3>
+        <p>With this activity, I further improved my integration skills for functions since I learned the fundamental concepts in this activity. Furthermore, I managed to use my previous learning with derivatives to apply it in u-substitution concepts in integrating the functions.</p>
+      </section>
+    </template>
+    <template id="tpl-finals-act2" data-period="Finals" data-card="Finals: Integrals Activity 2">
+      <h2 class="project-title">Integrals Activity 2</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-09-21">September 21, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">14/14</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-finals-act2">
+        <h3 id="d-finals-act2" class="section-label">Description</h3>
+        <p>An activity to apply Integral Calculus with trigonometric functions.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-finals-act2">
+        <h3 id="a-finals-act2" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-1"><figure class="work-figure"><a class="work-link" href="project_images/finals-act-2.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Original work, Integrals Activity 2 (opens in a new tab)"><img src="project_images/finals-act-2.jpg" alt="Handwritten solution sheet for Integrals Activity 2, integrating trigonometric functions, scored 14/14" loading="lazy" decoding="async"></a><figcaption>Original work<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-finals-act2">
+        <h3 id="o-finals-act2" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Apply trigonometric derivatives to integrate trigonometric functions</li><li>Demonstrate the concept of integrals in trigonometric functions</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-finals-act2">
+        <h3 id="r-finals-act2" class="section-label">Reflection</h3>
+        <p>With this activity, I learned the importance of learning the derivatives of trigonometric functions first before integration. Because with integrating trigonometric functions, it is basically reversing the differentiation process - which now I find fascinating on how I can use past lessons to help me solve integrals.</p>
+      </section>
+    </template>
+    <template id="tpl-finals-quiz1" data-period="Finals" data-card="Finals: Quiz 1">
+      <h2 class="project-title">Finals: Quiz 1</h2>
+      <dl class="project-meta">
+        <div><dt>Author</dt><dd>Crisiane Josef A. Caranto</dd></div>
+        <div><dt>Date</dt><dd><time datetime="2026-10-01">October 1, 2026</time></dd></div>
+        <div><dt>Score</dt><dd><span class="score-badge">60/60</span></dd></div>
+      </dl>
+      <section class="project-section" aria-labelledby="d-finals-quiz1">
+        <h3 id="d-finals-quiz1" class="section-label">Description</h3>
+        <p>A culmination of my finals learning. The quiz covered integration concepts from polynomial functions to trigonometric functions and applications of all lessons from functions and differentiation.</p>
+      </section>
+      <section class="project-section project-artifact" aria-labelledby="a-finals-quiz1">
+        <h3 id="a-finals-quiz1" class="section-label">The Artifact</h3>
+        <div class="project-media"><div class="work-gallery work-gallery-3"><figure class="work-figure"><a class="work-link" href="project_images/finals-quiz-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 1 of 3, Finals: Quiz 1 (opens in a new tab)"><img src="project_images/finals-quiz-1.jpg" alt="Handwritten solution sheet for Finals Quiz 1, page 1 of 3" loading="lazy" decoding="async"></a><figcaption>Page 1 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure><figure class="work-figure"><a class="work-link" href="project_images/finals-quiz-2.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 2 of 3, Finals: Quiz 1 (opens in a new tab)"><img src="project_images/finals-quiz-2.jpg" alt="Handwritten solution sheet for Finals Quiz 1, page 2 of 3" loading="lazy" decoding="async"></a><figcaption>Page 2 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure><figure class="work-figure"><a class="work-link" href="project_images/finals-quiz-3.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Page 3 of 3, Finals: Quiz 1 (opens in a new tab)"><img src="project_images/finals-quiz-3.jpg" alt="Handwritten solution sheet for Finals Quiz 1, page 3 of 3" loading="lazy" decoding="async"></a><figcaption>Page 3 of 3<span class="zoom-hint"> &middot; select the image to open it full size</span></figcaption></figure></div></div>
+      </section>
+      <section class="project-section" aria-labelledby="o-finals-quiz1">
+        <h3 id="o-finals-quiz1" class="section-label">Objectives</h3>
+        <ul class="objective-list"><li>Strengthen and practice knowledge on integrating polynomial, trigonometric, and <var>e<sup>x</sup></var> functions</li><li>Apply core integration formulas to evaluate both definite and indefinite integrals accurately</li><li>Demonstrate proficiency in selecting the correct algebraic techniques to simplify and solve integrals</li></ul>
+      </section>
+      <section class="project-section project-reflection" aria-labelledby="r-finals-quiz1">
+        <h3 id="r-finals-quiz1" class="section-label">Reflection</h3>
+        <p>With the quiz, I have considered myself proficient in understanding the application of integration rules in Calculus. Especially since polynomial, trigonometric, and <var>e<sup>x</sup></var> functions are the fundamentals of integral Calculus, assessing my skills in being able to apply them properly has not only showed me what I need to improve on, but also strengthened my knowledge. After this, I can say that I can do fundamental Calculus proficiently. From learning basic functions to differentiation to now integrals, I consider my learnings in Calculus very fun and I really hope that I can use them effectively in my next journey in Cybersecurity.</p>
+      </section>
+    </template>
+
+    <script>
+(function () {
+    "use strict";
+
+    /* ---------- Mobile navigation ---------- */
+    var toggle = document.getElementById("nav-toggle");
+    var navLinks = document.getElementById("nav-links");
+    function setMenu(open) {
+        navLinks.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+    }
+    toggle.addEventListener("click", function () {
+        setMenu(toggle.getAttribute("aria-expanded") !== "true");
+    });
+    navLinks.addEventListener("click", function (e) {
+        if (e.target.closest("a")) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+            setMenu(false);
+            toggle.focus();
+        }
+    });
+
+    /* ---------- Highlight current section in the navigation ---------- */
+    if ("IntersectionObserver" in window) {
+        var links = {};
+        navLinks.querySelectorAll("a").forEach(function (a) {
+            links[a.getAttribute("href").slice(1)] = a;
+        });
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (!en.isIntersecting) return;
+                Object.keys(links).forEach(function (k) { links[k].removeAttribute("aria-current"); });
+                if (links[en.target.id]) links[en.target.id].setAttribute("aria-current", "true");
+            });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+        Object.keys(links).forEach(function (id) {
+            var s = document.getElementById(id);
+            if (s) io.observe(s);
+        });
+    }
+
+    /* ---------- Gallery filter ---------- */
+    var chips = document.querySelectorAll(".chip");
+    var cards = document.querySelectorAll("#card-grid .card");
+    var countEl = document.getElementById("gallery-count");
+    chips.forEach(function (chip) {
+        chip.addEventListener("click", function () {
+            var f = chip.getAttribute("data-filter");
+            var shown = 0;
+            chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c === chip)); });
+            cards.forEach(function (card) {
+                var match = f === "all" || card.getAttribute("data-period") === f;
+                card.hidden = !match;
+                if (match) shown++;
+            });
+            countEl.textContent = f === "all"
+                ? "Showing all " + shown + " artifacts. Select a card to open the full project."
+                : "Showing " + shown + " " + f + " artifacts. Select a card to open the full project.";
+        });
+    });
+
+    /* ---------- Project popup ---------- */
+    var dialog = document.getElementById("project-modal");
+    var body = document.getElementById("modal-body");
+    var eyebrow = document.getElementById("modal-eyebrow");
+    var titleSlot = document.getElementById("modal-title-slot");
+    var btnClose = document.getElementById("modal-close");
+    var btnBack = document.getElementById("modal-back");
+    var btnPrev = document.getElementById("modal-prev");
+    var btnNext = document.getElementById("modal-next");
+    var root = document.documentElement;
+    var ids = Array.prototype.map.call(document.querySelectorAll("template[id^='tpl-']"), function (t) {
+        return t.id.slice(4);
+    });
+    var current = null;     // id of the project on screen
+    var trigger = null;     // element that opened the popup (focus returns here)
+    var closing = false;
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function stopVideo() {
+        body.querySelectorAll("iframe").forEach(function (f) { f.removeAttribute("src"); });
+    }
+
+    function render(id, moveTrigger) {
+        var tpl = document.getElementById("tpl-" + id);
+        if (!tpl) return;
+        stopVideo();
+        var frag = tpl.content.cloneNode(true);
+        var title = frag.querySelector(".project-title");
+        title.id = "modal-title";
+        titleSlot.replaceChildren(title);
+        eyebrow.textContent = tpl.getAttribute("data-period") + " \u00b7 Calculus Artifact";
+        body.replaceChildren(frag);
+        body.querySelectorAll("iframe[data-src]").forEach(function (f) {
+            f.src = f.getAttribute("data-src");
+        });
+        body.scrollTop = 0;
+        current = id;
+        var i = ids.indexOf(id);
+        btnPrev.disabled = i <= 0;
+        btnNext.disabled = i >= ids.length - 1;
+        // keep focus-return target pointing at the card of the project now shown
+        var cardBtn = document.querySelector("#card-grid .card-open[data-project='" + id + "']");
+        if (moveTrigger && cardBtn && !cardBtn.closest("[hidden]")) trigger = cardBtn;
+    }
+
+    function openProject(id, from) {
+        trigger = from || document.activeElement;
+        render(id);
+        closing = false;
+        dialog.classList.remove("is-closing");
+        if (typeof dialog.showModal === "function") dialog.showModal();
+        else dialog.setAttribute("open", "");
+        root.classList.add("modal-open");
+        btnClose.focus();
+    }
+
+    function finishClose() {
+        if (dialog.open) dialog.close();
+        dialog.classList.remove("is-closing");
+        root.classList.remove("modal-open");
+        stopVideo();
+        body.replaceChildren();
+        closing = false;
+        if (trigger && document.contains(trigger)) trigger.focus();
+    }
+
+    function closeProject() {
+        if (!dialog.open || closing) return;
+        closing = true;
+        if (reduce.matches) { finishClose(); return; }
+        dialog.classList.add("is-closing");
+        var done = false;
+        function end() { if (done) return; done = true; finishClose(); }
+        dialog.addEventListener("animationend", end, { once: true });
+        setTimeout(end, 350); // safety net
+    }
+
+    function step(delta) {
+        var i = ids.indexOf(current) + delta;
+        if (i < 0 || i >= ids.length) return;
+        render(ids[i], true);
+        // announce the change to the screen reader by moving focus to the new content area
+        body.focus();
+    }
+
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".card-open");
+        if (btn) openProject(btn.getAttribute("data-project"), btn);
+    });
+    btnClose.addEventListener("click", closeProject);
+    btnBack.addEventListener("click", closeProject);
+    btnPrev.addEventListener("click", function () { step(-1); });
+    btnNext.addEventListener("click", function () { step(1); });
+
+    // Escape key (native dialog "cancel") uses the same animated close
+    dialog.addEventListener("cancel", function (e) { e.preventDefault(); closeProject(); });
+
+    // Backdrop click: only when the click lands on the dialog itself, not on the panel inside it
+    dialog.addEventListener("mousedown", function (e) {
+        dialog._downOnBackdrop = (e.target === dialog);
+    });
+    dialog.addEventListener("click", function (e) {
+        if (e.target === dialog && dialog._downOnBackdrop) closeProject();
+    });
+
+    /* ---------- Contact form (no backend: opens the visitor's email app) ---------- */
+    var form = document.getElementById("contact-form");
+    var status = document.getElementById("form-status");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var d = new FormData(form);
+        var subject = "Portfolio message from " + d.get("name");
+        var text = d.get("message") + "\n\n" + d.get("name") + " <" + d.get("email") + ">";
+        status.textContent = "Opening your email app with your message. If nothing opens, write to caranto.crisiane@gmail.com directly.";
+        window.location.href = "mailto:caranto.crisiane@gmail.com?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(text);
+    });
+})();
+
+    </script>
 </body>
 </html>
